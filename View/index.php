@@ -17,7 +17,7 @@ if(isset($_POST["recherche"])){
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Accueil - Great Deal</title>
+    <title>Accueil - Thief-LBC</title>
     <?php include 'include/header.php'; ?>
 </head>
 <body style="background-color: #f2edf3">
