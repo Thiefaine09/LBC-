@@ -35,7 +35,12 @@
 
     }
 
-    .checkmark__check {
+    
+    
+    
+    
+    
+     .checkmark__check {
         transform-origin: 50% 50%;
         stroke-dasharray: 48;
         stroke-dashoffset: 48;
@@ -63,6 +68,8 @@
             box-shadow: inset 0px 0px 0px 30px #4bb71b;
         }
     }
+    
+    
 </style>
 <div class="container-scroller">
 

@@ -151,7 +151,7 @@ if(isset($_POST["submit"])){
             <div class="row flex-grow">
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="auth-form-transparent text-left p-3">
-                        <div class="brand-logo text-center">
+                        <div class="brand-logo "text-center">
                             <img src="../image/jale.ico" alt="logo">
                         </div>
                         <?php
@@ -199,7 +199,7 @@ if(isset($_POST["submit"])){
                                 </div>
                             </div>
                             <div class="my-3 text-center">
-                                <input type="submit" name="submit" class="btn btn-warning btn-lg btn-block" value="Connexion">
+                                <input type="submit" name="submit" class="btn btn-primary" style="background-color: #1FADDA;"  value="Connexion">
                             </div>
                             <div class="text-center mt-4 font-weight-light"> Vous n'avez pas de compte ? <a href="inscription.php" class="text-danger">Inscrivez-vous</a> <!-- redirection vers la page inscription -->
                             </div>
@@ -207,7 +207,7 @@ if(isset($_POST["submit"])){
                     </div>
                 </div>
                 <div class="col-lg-6 login-half-bg d-flex flex-row">
-                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2021 All rights reserved.</p>
+                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2023 </p>
                 </div> <!-- footer présent sur toutes les pages -->
             </div>
         </div>

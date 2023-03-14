@@ -145,7 +145,7 @@ if(isset($_POST["search"])){
             <ul class="nav page-navigation">
                 <li class="nav-item <?= $short ?>">
                     <a class="nav-link" href="categorie.php?idcategorie=1">
-                        <i class="fa-solid fa-heart mx-2"></i>
+                        <i class="fa-sharp fa-solid fa-futbol"></i>
                         <span class="menu-title">Short</span>
                     </a>
                 </li>
