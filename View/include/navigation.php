@@ -77,8 +77,8 @@ if(isset($_POST["search"])){
 
                     <li class="nav-item nav-logout ">
                         <a class="nav-link text-center text-dark mt-lg-4" href="<?php if(isset($uid)): ?>mesAnnonces.php <?php else: ?>connexion.php <?php endif; ?>">
-                            <i class="fa-solid fa-list"><p  style="font-family: 'Courier New', Courier, monospace" class="d-lg-flex d-none note-icon">Mes annonces</p></i>
-                        </a>
+                                <i class="fa-solid fa-list"><p  style="font-family: 'Courier New', Courier, monospace" class="d-lg-flex d-none note-icon">Mes annonces</p></i>
+                            </a>
                     </li>
 
                     <li class="nav-item nav-logout ">

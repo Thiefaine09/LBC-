@@ -27,7 +27,7 @@ $req = $pdo->prepare("UPDATE annonce SET vue = :vue WHERE ida = :ida");
 $req->execute(array("vue" => $vue+1, "ida" => $ida));
 $req2 = $pdo->query("SELECT * FROM edition WHERE ide = ".$edition."");
 $req2=$req2->fetch();
-$nomEdition=$req2["nomEdition"];
+$nomMarque=$req2["nomMarque"];
 
 $req3 = $pdo->query("SELECT * FROM user WHERE idu = ".$vendeur."");
 $req3=$req3->fetch();
@@ -113,28 +113,28 @@ if(isset($_POST["send"])){
                                         <h2><?=$titre?><p class="float-end h3"><?= number_format($prix, 0, ',', ' ')  ?> €</p></h2>
                                         <ul class="product-variation">
                                             <?php if ($categorie==1): ?>
-                                                <a class="badge badge-pill badge-primary" href="categorie.php?idcategorie=<?=$categorie?>">Short<i class="fa-solid fa-heart mx-2"></i></a>
+                                                <a class="badge badge-pill badge-primary" href="categorie.php?idcategorie=<?=$categorie?>">Short</a>
                                             <?php elseif ($categorie==2): ?>
-                                                <a class="badge badge-pill badge-warning">Jogging/Legging<i class="fa-solid fa-user-secret mx-2"></i></a>
+                                                <a class="badge badge-pill badge-warning">Jogging/Legging</a>
                                             <?php elseif ($categorie==3): ?>
-                                                <a class="badge badge-pill badge-info">T-shirt<i class="fa-solid fa-rocket mx-2"></i></a>
+                                                <a class="badge badge-pill badge-info">T-shirt</a>
                                             <?php elseif ($categorie==4): ?>
-                                                <a class="badge badge-pill badge-danger">Développement personnel<i class="fa-solid fa-feather-pointed mx-2"></i></a>
+                                                <a class="badge badge-pill badge-danger">Développement personnel</a>
                                             <?php else: ?>
-                                                <a class="badge badge-pill badge-success">Survêtement<i class="fa-solid fa-earth-europe mx-2"></i></a>
+                                                <a class="badge badge-pill badge-success">Survêtement</a>
                                             <?php endif; ?>
                                             <!-- selon la catégorie, un different badge va s'afficher  -->
 
 
-                                            <span class="badge badge-pill badge-dark"><?=$nomEdition?> <i class="fa-solid fa-book"></i></span>
+                                            <span class="badge badge-pill badge-dark"><?=$nomMarque?> </span>
 
-                                            <span class="badge badge-pill badge-info"><?=$etat?> &nbsp<i class="fa-solid fa-thumbs-up"></i></span>
+                                            <span class="badge badge-pill badge-info"><?=$etat?> &nbsp</span>
                                             <!-- les informations récuperer son afficher dans un badge -->
 
                                             <?php if ($poche==1): ?>
-                                                <span class="badge badge-pill badge-danger">Format poche &nbsp<i class="fa-solid fa-pen-nib"></i></span>
+                                                <span class="badge badge-pill badge-danger">Format poche &nbsp</span>
                                             <?php else: ?>
-                                                <span class="badge badge-pill badge-danger">Format standard &nbsp<i class="fa-solid fa-pen-nib"></i></span>
+                                                <span class="badge badge-pill badge-danger">Format standard &nbsp</span>
                                             <?php endif; ?>
                                             <!--  si l'annonce est en format poche alors affichage d'un badge sinon different badge  -->
 
@@ -162,7 +162,7 @@ if(isset($_POST["send"])){
                                             <a href="message.php?idc=<?= $idc["idc"]?>" class="btn btn-inverse-warning">Contacter le vendeur</a>
                                             <?php } ?>
                                         <?php else: ?>
-                                            <a href="connexion.php" class="btn btn-inverse-warning">Contacter le vendeur</a>
+                                            <a href="connexion.php" class="btn btn-inverse-warning" style="background-color: #1FADDA;" >Contacter le vendeur</a>
                                         <?php endif; ?>
                                         <!-- si la personne est connecté alors on demande a la BDD si il y a une conversation en cours sur l'id de l'annonce et avec l'user :  possibilité de contacter le vendeur en cliquant sur le bouton
                                         sinon la personne n'est pas connecté alors on renvoie à la page connexion pour contacter ensuite le vendeur
@@ -187,7 +187,7 @@ if(isset($_POST["send"])){
 
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="submit" class="btn btn-success" name="send" value="Envoyer message">
+                                    <input type="submit" class="btn btn-success"  name="send" value="Envoyer message">
                                     </form>
                                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
                                 </div>

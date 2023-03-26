@@ -110,13 +110,13 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
                                         <input type="text" name="detail" class="form-control form-control-lg" placeholder="Entrez une description:" />
                                     </div>
                                     <div class="mb-4">
-                                        <label class="form-label">Séléctionnez l'éditeur:</label>
+                                        <label class="form-label">Séléctionnez votre edition:</label>
                                         <select class="form-select mb-3" name="edition">
                                             <?php
                                             $req=$pdo->query("select * from edition");
                                             $resultat=$req->fetchAll();
                                             foreach($resultat as $edition){ ?>
-                                                <option value='<?= $edition["ide"] ?>'><?= $edition["nomEdition"] ?></option><br>";
+                                                <option value='<?= $edition["ide"] ?>'><?= $edition["nomedition"] ?></option><br>";
                                             <?php }
                                             ?>
                                         </select>
@@ -144,7 +144,7 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
                                         <label class="form-check-label" for="flexCheckChecked">J'accepte les conditions général d'utilisateur, les règles de diffusion du site Thief-LAB et j'autorise Thief-LAB a diffuser mon annonce.
                                         </label>
                                     </div>
-                                    <input style='background-color: #FFE713' class="btn px-5" name="btn" type="submit" value="Enregistrer">
+                                    <input style='background-color: #1FADDA' class="btn px-5" name="btn" type="submit" value="Enregistrer">
                                 </form>
 
                             </div>

@@ -105,7 +105,6 @@ $result2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
                                 <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=decroissant">Décroissant</a>
                                 <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=livraison">Livraison</a>
                                 <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=mainPropre">Main propre</a>
-                                <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=poche">Poche</a>
                             </div>
                             <!-- un bouton est un lien amenant à la méthode get. 
                             Lorsque l'on clique sur le bouton voulu, on rentre dans le if et appliquons la requête -->

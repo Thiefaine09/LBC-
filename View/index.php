@@ -1,10 +1,9 @@
 <?php
 include 'include/element.php';
 //$header = "MIME-Version: 1.0\r\n";
-//$header .= 'From: "Nom"<test@jalegreatdeal.fr>' . "\n";
 //$header .= 'Content-Type: text/html; charset="utf-8"' . "\n";
 //$header .= 'Content-Transfer-Encoding: 8bit';
-
+    
 //$message = "Salut";
 //$mail = "admin@jalegreatdeal.fr";
 //mail($mail, "Sujet", $message, $header);
@@ -131,7 +130,7 @@ if(isset($_POST["recherche"])){
                                                         <span class="badge badge-success">Survêtement <i class="fa-solid fa-earth-europe mx-2"></i></span>
                                                         <?php endif; ?>
                                                 </ul>
-                                                <a href="detail.php?ida=<?= $tableau["ida"] ?>" class="btn btn-inverse-warning">Voir</a>
+                                                <a href="detail.php?ida=<?= $tableau["ida"] ?>" class="btn btn-inverse-warning" style="background-color: #1FADDA">Voir</a>
                                             </div>
                                         </div>
                                     </div>

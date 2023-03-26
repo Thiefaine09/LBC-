@@ -24,7 +24,7 @@
                                 <h1>Mes annonces</h1>
                                 <table class="table table-striped">
                                     <tr>
-                                        <th>Photo</th><th>Titre</th><th>Catégorie</th><th>Edition</th><th>Poche</th><th>Livraison</th><th>Date</th><th>Vues</th><th>Prix</th><th>Supprimer</th>
+                                        <th>Photo</th><th>Titre</th><th>Catégorie</th><th>Marque</th><th>Poche</th><th>Livraison</th><th>Date</th><th>Vues</th><th>Prix</th><th>Supprimer</th>
                                     </tr>
                                     <?php
 
@@ -41,7 +41,7 @@
                                         <td class='align-middle'><img src='../<?= $row["photo"]?>' width='60'></td>
                                         <td class='align-middle'><?= $row["titre"] ?></td>
                                         <td class='align-middle'><?= $ligne2["nomCat"] ?></td>
-                                        <td class='align-middle'><?= $ligne3["nomEdition"] ?></td>
+                                        <td class='align-middle'><?= $ligne3["nomMarque"] ?></td>
                                         <?php
                                         if ($row["poche"]==1){
                                             echo "<td class='align-middle'><i class='fas fa-check'></i></td>";

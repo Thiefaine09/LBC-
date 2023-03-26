@@ -142,7 +142,7 @@ if(isset($_POST["bout_mdp"])) // si le bouton est cliqué, les informations sais
                                     <input type='file' name='photo' class='form-control form-control-lg' value="" />
                                     
                                 </div>            
-                                <input class='btn btn-warning px-5' name='bout_avatar' type='submit' value='Modifier avatar'>
+                                <input class='btn btn-warning px-5' style="background-color: #1FADDA"  name='bout_avatar' type='submit' value='Modifier avatar'>
                                 </form>
                             </div>
                         </div>
@@ -194,7 +194,7 @@ if(isset($_POST["bout_mdp"])) // si le bouton est cliqué, les informations sais
                                                     <input type='text' name='nomVille' class='form-control form-control-lg' value='<?= $nomVille ?>'/>
                                                     
                                                 </div>
-                                                <input class='btn btn-warning px-5' name='bout_info' type='submit' value='Enregistrer mes informations'>
+                                                <input class='btn btn-warning px-5' style="background-color: #1FADDA"  name='bout_info' type='submit' value='Enregistrer mes informations'>
 
                                                 </form>
                                             </div>
@@ -223,7 +223,7 @@ if(isset($_POST["bout_mdp"])) // si le bouton est cliqué, les informations sais
                                         <input type='password' name='mdp2' class='form-control form-control-lg'placeholder='Confirmez votre nouveau mot de passe'/>
                                         
                                     </div>
-                                    <input class='btn btn-warning px-5' name='bout_mdp' type='submit' value='Enregistrer le nouveau mot de passe'>
+                                    <input class='btn btn-warning px-5' style="background-color: #1FADDA" name='bout_mdp' type='submit' value='Enregistrer le nouveau mot de passe'>
 
                                     </form>
 

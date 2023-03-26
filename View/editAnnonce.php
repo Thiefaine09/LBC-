@@ -119,13 +119,13 @@ if(isset($_POST["edit"])){
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="titre" class="form-label">Edition</label>
+                                        <label for="titre" class="form-label">Marque</label>
                                         <select class="form-control" name="edition">
                                             <?php foreach ($pdo->query('SELECT * FROM edition') as $row) {
                                                 if ($row['ide'] == $annonce['edition']) {
-                                                    echo '<option value="' . $row['ide'] . '" selected>' . $row['nomEdition'] . '</option>';
+                                                    echo '<option value="' . $row['ide'] . '" selected>' . $row['nomMarque'] . '</option>';
                                                 } else {
-                                                    echo '<option value="' . $row['ide'] . '">' . $row['nomEdition'] . '</option>';
+                                                    echo '<option value="' . $row['ide'] . '">' . $row['nomMarque'] . '</option>';
                                                 }
                                             }
                                             // possibilité de changer l'edition

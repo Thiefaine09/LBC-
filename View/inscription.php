@@ -203,7 +203,7 @@ if(isset($_POST['submit']))
                                         <input type="password" name="mdp2" class="form-control form-control-lg border-left-0" placeholder="Confirmer le mot de passe">
                                     </div>
                                 <div class="mt-3 text-center">
-                                    <input type="submit" name="submit" class="btn  btn-warning " value="S'inscrire">
+                                    <input type="submit" name="submit" class="btn  btn-warning " style="background-color: #1FADDA;"  value="S'inscrire">
                                 </div>
 
                             </form>

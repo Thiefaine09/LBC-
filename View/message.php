@@ -72,7 +72,7 @@ if(isset($_POST["bout_mess"]))
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Message - Great Deal</title>
+    <title>Message</title>
     <?php include 'include/header.php'; ?>  <!-- header présent sur toutes les pages (connexion avec bootstrap) -->
 </head>
 <body style="background-color: #f2edf3">
