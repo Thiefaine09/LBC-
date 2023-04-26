@@ -1,8 +1,8 @@
-<?php include 'include/element.php'; ?> <!-- élément php présent sur tout les pages (vérification si sessiion ouvert, connexion bdd etc...) -->
+<?php include 'include/element.php'; ?> <!-- élément php présent sur tout les pages (vérification si session ouvert, connexion bdd etc...) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Bravo - Great Deal</title>
+    <title>Bravo - ThiefLab</title>
     <?php include 'include/header.php'; ?>  <!-- header présent sur toutes les pages (connexion avec bootstrap) -->
 </head>
 <body style="background-color: #f2edf3">
@@ -92,7 +92,7 @@
                                     <h2>Bravo votre annonce a été publié !</h2>
                                 </div>
                                 <div class="text-center mt-4">
-                                    <a class='btn text-white btn-success' href='mesAnnonces.php'>Voir mes annonces</a>
+                                    <a class='btn text-white btn-success'style='background-color:#1FADDA; border-radius: 30px' href='mesAnnonces.php'>Voir mes annonces</a>
                                 </div>
                             </div>
                         </div>

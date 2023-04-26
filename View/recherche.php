@@ -9,7 +9,7 @@ if(isset($_SESSION["search"])){
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Recherche - Great Deal</title>
+    <title>Recherche - Thied-Lab</title>
     <?php include 'include/header.php'; ?>  <!-- header présent sur toutes les pages (connexion avec bootstrap) -->
 </head>
 <body style="background-color: #f2edf3">
@@ -29,7 +29,7 @@ if(isset($_SESSION["search"])){
                             <div class="card-body">
                                 <h2 class="text-center">Recherche</h2>
                                     <?php foreach($result2 as $ligne){ ?>
-                                        <div class= 'p-5 text-center' style='background-color:#F3F781'>
+                                        <div class= 'p-5 text-center' style='background-color:#1FADDA; border-radius: 50px'>
                                             <div class='card'>
                                                 <div class='row'>
 
@@ -45,12 +45,12 @@ if(isset($_SESSION["search"])){
                                                         <ul class="product-variation">
 
                                                             <span class="badge badge-pill badge-info"><?=$ligne['etat']?> &nbsp<i class="fa-solid fa-thumbs-up"></i></span>
-                                                            <?php if ($ligne["poche"]==1): ?>
-                                                                <span class="badge badge-pill badge-danger">Format poche &nbsp<i class="fa-solid fa-pen-nib"></i></span>
+                                                            <?php if ($ligne["genre"]==1): ?>
+                                                                <span class="badge badge-pill badge-danger">Format genre &nbsp<i class="fa-solid fa-pen-nib"></i></span>
                                                             <?php else: ?>
                                                                 <span class="badge badge-pill badge-danger">Format standard &nbsp<i class="fa-solid fa-pen-nib"></i></span>
                                                             <?php endif; ?>
-                                                            <!-- selon si c'est un format poche ou standard, un different bagde est mis -->
+                                                            <!-- selon si c'est un format genre ou standard, un different bagde est mis -->
 
                                                             <?php if ($ligne["livraison"]==1): ?>
                                                                 <span class="badge badge-pill badge-success">Livraison &nbsp<i class="fa-solid fa-truck"></i></span>

@@ -17,23 +17,26 @@ $categorie=$req["categorie"];
 $favoris=$req["favoris"];
 $etat=$req["etat"];
 $livraison=$req["livraison"];
-$poche=$req["poche"];
-$edition=$req["edition"];
+$genre=$req["genre"];
+$marque=$req["marque"];
 $vue=$req["vue"];
 $timeAnnonce = $req["time"];
 
 //on fait un compteur pour comptabiliser les vue pour une annonce. Pour une vue dans l'annonce ida, on ajoute +1 dans la BDD dans la colonne vue  
 $req = $pdo->prepare("UPDATE annonce SET vue = :vue WHERE ida = :ida");
 $req->execute(array("vue" => $vue+1, "ida" => $ida));
-$req2 = $pdo->query("SELECT * FROM edition WHERE ide = ".$edition."");
+$req2 = $pdo->query("SELECT * FROM marque WHERE ide = ".$marque."");
 $req2=$req2->fetch();
 $nomMarque=$req2["nomMarque"];
+
+
 
 $req3 = $pdo->query("SELECT * FROM user WHERE idu = ".$vendeur."");
 $req3=$req3->fetch();
 $nom=$req3["nom"];
 $prenom=$req3["prenom"];
 $nomVille=$req3["nomVille"];
+
 // on selectionne l'édition et le vendeur selon son ide et idu des tables
 if(isset($_POST["send"])){
     $message = $_POST["message"];
@@ -51,7 +54,7 @@ if(isset($_POST["send"])){
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Detail annonce - Great Deal</title>
+    <title>Detail annonce - Thief-Lab</title>
     <?php include 'include/header.php'; ?>  <!-- header présent sur toutes les pages (connexion avec bootstrap) -->
 </head>
 <body style="background-color: #f2edf3">
@@ -131,12 +134,12 @@ if(isset($_POST["send"])){
                                             <span class="badge badge-pill badge-info"><?=$etat?> &nbsp</span>
                                             <!-- les informations récuperer son afficher dans un badge -->
 
-                                            <?php if ($poche==1): ?>
-                                                <span class="badge badge-pill badge-danger">Format poche &nbsp</span>
+                                            <?php if ($genre==1): ?>
+                                                <span class="badge badge-pill badge-danger">Format genre &nbsp</span>
                                             <?php else: ?>
                                                 <span class="badge badge-pill badge-danger">Format standard &nbsp</span>
                                             <?php endif; ?>
-                                            <!--  si l'annonce est en format poche alors affichage d'un badge sinon different badge  -->
+                                            <!--  si l'annonce est en format genre alors affichage d'un badge sinon different badge  -->
 
                                             <?php if ($livraison==1): ?>
                                                 <span class="badge badge-pill badge-success">Livraison &nbsp<i class="fa-solid fa-truck"></i></span>

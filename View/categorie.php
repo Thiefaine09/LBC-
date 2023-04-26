@@ -53,14 +53,14 @@ if(isset($_GET["filtre"])){
     }
     // dans cette requete on selectionne si il n'y a pas de livraison et donc en main propre
 
-    if($filtre=="poche"){
-        $statement2 = $pdo -> prepare('SELECT * from annonce where categorie = :idcategorie and poche = 1');
+    if($filtre=="genre"){
+        $statement2 = $pdo -> prepare('SELECT * from annonce where categorie = :idcategorie and genre = 1');
         $statement2 -> bindValue(':idcategorie', $idcategorie, PDO::PARAM_INT);
         $statement2 -> execute();
         $result2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
     }
-    // dans cette requete on selectionne si c'est un format poche ou pas
+    // dans cette requete on selectionne si c'est un  genre homme ou femme
 
 }elseif(isset($_GET["recherche"])){
     $recherche=$_GET["recherche"];
@@ -101,10 +101,10 @@ $result2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card">
                             <div class="card-body text-center">
                                 <h2 class="card-title text-center">Filtrez mes recherches :</h2>
-                                <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=croissant">Croissant</a>
-                                <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=decroissant">Décroissant</a>
-                                <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=livraison">Livraison</a>
-                                <a  class="btn btn-gradient-warning" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=mainPropre">Main propre</a>
+                                <a  class="btn btn-gradient" style="background-color: #1FADDA; color:white" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=croissant">Croissant</a>
+                                <a  class="btn btn-gradient" style="background-color: #1FADDA; color:white" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=decroissant">Décroissant</a>
+                                <a  class="btn btn-gradient" style="background-color: #1FADDA; color:white" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=livraison">Livraison</a>
+                                <a  class="btn btn-gradient" style="background-color: #1FADDA; color:white" href="categorie.php?idcategorie=<?=$result["idc"]?>&filtre=mainPropre">Main propre</a>
                             </div>
                             <!-- un bouton est un lien amenant à la méthode get. 
                             Lorsque l'on clique sur le bouton voulu, on rentre dans le if et appliquons la requête -->
@@ -133,12 +133,12 @@ $result2 = $statement2->fetchAll(PDO::FETCH_ASSOC);
                                             <ul class="product-variation">                                                
                                                                                              
                                                  <span class="badge badge-pill badge-info"><?=$ligne['etat']?> &nbsp<i class="fa-solid fa-thumbs-up"></i></span>
-                                                <?php if ($ligne["poche"]==1): ?>
-                                                <span class="badge badge-pill badge-danger">Format poche &nbsp<i class="fa-solid fa-pen-nib"></i></span>
+                                                <?php if ($ligne["genre"]==1): ?>
+                                                <span class="badge badge-pill badge-danger">Format genre &nbsp<i class="f "></i></span>
                                                 <?php else: ?>
                                                 <span class="badge badge-pill badge-danger">Format standard &nbsp<i class="fa-solid fa-pen-nib"></i></span>
                                                 <?php endif; ?>
-                                                <!-- selon si c'est un format poche ou standard, un different bagde est mis -->
+                                                <!-- selon si c'est un format genre ou standard, un different bagde est mis -->
 
                                                 <?php if ($ligne["livraison"]==1): ?>
                                                 <span class="badge badge-pill badge-success">Livraison &nbsp<i class="fa-solid fa-truck"></i></span>

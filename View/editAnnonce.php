@@ -37,13 +37,13 @@ if(isset($_POST["edit"])){
     $detail = $_POST["detail"];
     $prix = $_POST["prix"];
     $livraison = $_POST["livraison"];
-    $poche = $_POST["poche"];
+    $genre = $_POST["genre"];
     echo $categorie = $_POST["categorie"];
     echo $edition = $_POST["edition"];
     $etat = $_POST["etat"];
-    $poche = $_POST["poche"];
-    $req = $pdo->prepare('UPDATE annonce SET titre = ?, detail = ?, prix = ?, livraison = ?, poche = ?, categorie = ?, edition = ?, etat = ? WHERE ida = ?');
-    $req->execute([$titre, $detail, $prix, $livraison, $poche, $categorie, $edition, $etat, $ida]);
+    $genre = $_POST["genre"];
+    $req = $pdo->prepare('UPDATE annonce SET titre = ?, detail = ?, prix = ?, livraison = ?, genre = ?, categorie = ?, edition = ?, etat = ? WHERE ida = ?');
+    $req->execute([$titre, $detail, $prix, $livraison, $genre, $categorie, $edition, $etat, $ida]);
     header('Location: editAnnonce.php?ida='.$ida);
 }
 // recuperation des informations de l'annonce selon l'ida
@@ -134,9 +134,9 @@ if(isset($_POST["edit"])){
                                     </div>
                                 
                                     <div class="form-group">
-                                        <label for="titre" class="form-label">Poche</label>
-                                        <select class="form-control" name="poche">
-                                            <?php if ($annonce['poche'] == 1) {
+                                        <label for="titre" class="form-label">Genre</label>
+                                        <select class="form-control" name="genre">
+                                            <?php if ($annonce['genre'] == 1) {
                                                 echo '<option value="1" selected>Oui</option>';
                                                 echo '<option value="0">Non</option>';
                                             } else {

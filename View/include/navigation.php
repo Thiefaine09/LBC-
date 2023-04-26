@@ -145,31 +145,30 @@ if(isset($_POST["search"])){
             <ul class="nav page-navigation">
                 <li class="nav-item <?= $short ?>">
                     <a class="nav-link" href="categorie.php?idcategorie=1">
-                        <i class="fa-sharp fa-solid fa-futbol"></i>
+                        <i class="fa-solid fa-shorts"></i>
                         <span class="menu-title">Short</span>
                     </a>
                 </li>
                 <li class="nav-item <?= $jogging ?>">
                     <a class="nav-link" href="categorie.php?idcategorie=2">
-                        <i class="fa-solid fa-user-secret mx-2"></i>
+                        <i class="fa-solid fa-running"></i>
                         <span class="menu-title">Jogging/Legging</span>
                     </a>
                 </li>
                 <li class="nav-item <?= $t_shirt ?>">
                     <a class="nav-link" href="categorie.php?idcategorie=3">
-                    <i class="fa-sharp fa-solid fa-shirt"></i>
-                        <span class="menu-title">T-shirt</span>
+                        <i class="fa-solid fa-tshirt"></i>
+                            <span style="padding:5px" class="menu-title">T-shirt</span>
                     </a>
                 </li>
                 <li class="nav-item <?= $sweat ?>">
                     <a class="nav-link" href="categorie.php?idcategorie=4">
-                        <i class="fa-solid fa-feather-pointed mx-2"></i>
-                        <span class="menu-title">Sweat</span>
+                        <i class=" fa-solid fa-shirt-long-sleeve"></i>
+                        <span style="padding:2px" class="menu-title">Sweat</span>
                     </a>
                 </li>
                 <li class="nav-item <?= $survet ?>">
                     <a class="nav-link" href="categorie.php?idcategorie=5">
-                        <i class="fa-solid fa-earth-europe mx-2"></i>
                         <span class="menu-title">Survêtement</span>
                     </a>
                 </li>

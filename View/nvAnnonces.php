@@ -11,8 +11,8 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
     $prix= $_POST["prix"];
     $etat= $_POST["etat"];
     $livraison= $_POST["livraison"];
-    $poche= $_POST["poche"];
-    $edition= $_POST["edition"];
+    $genre= $_POST["genre"];
+    $marque= $_POST["marque"];
     $categorie= $_POST["categorie"];
     $extensions = array('jpg', 'png', 'gif', 'jpeg', 'PNG');
 
@@ -24,7 +24,7 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
                 move_uploaded_file($_FILES['photo']['tmp_name'], '../image/annonce/'."$titre.png");
                 echo 'Le fichier a été envoyé sur le serveur';
                 $time = time();
-                $req= $pdo->prepare("insert into annonce values (null,:titre,:vendeur,now(),:detail,:chemin,:categorie,:prix,:etat,0,:livraison,:poche,:edition,0,:time)"); //requête qui insert dans la bdd les infos saisies dans le formulaire
+                $req= $pdo->prepare("insert into annonce values (null,:titre,:vendeur,now(),:detail,:chemin,:categorie,:prix,:etat,0,:livraison,:genre,0,:time,:marque)"); //requête qui insert dans la bdd les infos saisies dans le formulaire
                 $req->execute(array(
                     "titre"=>$titre,
                     "vendeur"=>$vendeur,
@@ -34,8 +34,8 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
                     "prix"=>$prix,
                     "etat"=>$etat,
                     "livraison"=>$livraison,
-                    "poche"=>$poche,
-                    "edition"=>$edition,
+                    "genre"=>$genre,
+                    "marque"=>$marque,
                     "time"=>$time
                 ));
                 header("location:bravo.php");
@@ -58,7 +58,7 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Nouvelle annonce - Great Deal</title>
+    <title>Nouvelle annonce - Thief-LAB </title>
     <?php include 'include/header.php'; ?>  <!-- header présent sur toutes les pages (connexion avec bootstrap) -->
 </head>
 <body style="background-color: #f2edf3">
@@ -110,25 +110,32 @@ if(isset($_POST["btn"])){ // si le bouton ets cliqué, les informations écrites
                                         <input type="text" name="detail" class="form-control form-control-lg" placeholder="Entrez une description:" />
                                     </div>
                                     <div class="mb-4">
-                                        <label class="form-label">Séléctionnez votre edition:</label>
-                                        <select class="form-select mb-3" name="edition">
-                                            <?php
-                                            $req=$pdo->query("select * from edition");
-                                            $resultat=$req->fetchAll();
-                                            foreach($resultat as $edition){ ?>
-                                                <option value='<?= $edition["ide"] ?>'><?= $edition["nomedition"] ?></option><br>";
-                                            <?php }
-                                            ?>
-                                        </select>
+                                        <label class="form-label">Séléctionnez votre Marque:</label>
+
+                                        
+                                    
+                                    
+                                            <select class="form-select mb-3" name="marque">
+                                                    <?php
+                                                    $req=$pdo->query("select * from marque");
+                                                    $resultat=$req->fetchAll();
+                                                    foreach($resultat as $marque){ ?>
+                                                        <option value='<?= $marque["ide"] ?>'><?= $marque["nomMarque"] ?></option><br>";
+                                                    <?php }
+                                                    ?>
+                                                </select>
+                                                
+                                    
+                                    
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="prix">Prix:</label>
                                         <input type="number" name="prix" class="form-control form-control-lg" placeholder="Entrez le prix:" />
                                     </div>
-                                    <div class="mb-4">Poche:
+                                    <div class="mb-4">Genre:
 
-                                        <input type="radio" name="poche" value="1"required>Oui
-                                        <input type="radio" name="poche" value="0">Non
+                                        <input type="radio" name="genre" value="1"required>Homme
+                                        <input type="radio" name="genre" value="0">Femme
                                     </div>
                                     <div class="mb-4">Livraison:
 
